@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica de posiciones</title>
+    <!-- Hacemos referencia a los estilos de mi pagina-->
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Estilos propios de esta practica -->
+    <style>
+        .demo{
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #cccccc;
+        }
+        .container{
+            background: lightgray;
+        }
+        .box-orange{
+            background: orange;
+            width: 100px;
+            height: 100px;
+        }
+        .box-blue{
+            background: lightskyblue;
+            width: 100px;
+            height: 100px;
+        }
+        /* 1. Static */
+        #demo-static .box-blue{
+            position: static;
+        }
+        /* 2. Relative */
+        #demo-relative .container{
+            height: 320px;
+        }
+        #demo-relative .box-orange{
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+        /* 3. Absolute */
+        #demo-absolute .container{
+            position: relative;
+            height: 220px;
+        }
+        #demo-absolute .box-orange{
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+        /* 4. Fixed */
+        #demo-fixed .box-orange{
+            position: fixed;
+            right: 5px;
+            top: 150px;
+            z-index: 10;
+        }
+        /* 5. Sticky */
+        #demo-sticky .scroll-area{
+            height: 250px;
+            overflow: auto;
+            background: lightgray;
+        }
+        #demo-sticky .box-orange{
+            position: sticky;
+            top: 0;
+        }
+        #demo-sticky .relleno{
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+ <header>
+  <video autoplay muted loop playsinline>
+    <source src="fondo.mp4" type="video/mp4">
+  </video>
+ </header>
+ <nav>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="#">Conoceme</a>
+      <ul>
+        <li><a href="informacion.html">Informacion personal</a></li>
+        <li><a href="pasatiempos.html">Pasatiempos</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Segunda Parcial</a>
+      <ul>
+        <li><a href="practicauno.html">Practica uno</a></li>
+        <li><a href="posiciones.html">Practica de posiciones</a></li>
+        <li><a href="mundodigital.html">Mi mundo digital</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Tercer Parcial</a>
+      <ul>
+        <li><a href="practicauno_tercer.html">Practica uno</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<section>
+    <aside class="principal">
+      <h2>Practica de posiciones en CSS</h2>
+      <p>En esta practica probe los 5 valores de la propiedad
+         <code>position</code> usando cajas de colores.</p>
+
+      <!-- 1. STATIC -->
+      <div class="demo" id="demo-static">
+        <h3>1. Static</h3>
+        <p>Es el valor por defecto. Las cajas siguen el flujo normal del documento.</p>
+        <div class="container">
+          <div class="box-orange"></div>
+          <div class="box-blue"></div>
+        </div>
+      </div>
+
+      <!-- 2. RELATIVE -->
+      <div class="demo" id="demo-relative">
+        <h3>2. Relative</h3>
+        <p>La caja naranja se mueve 100px hacia abajo y 100px a la derecha
+           respecto a su posicion normal.</p>
+        <div class="container">
+          <div class="box-orange"></div>
+          <div class="box-blue"></div>
+        </div>
+      </div>
+
+      <!-- 3. ABSOLUTE -->
+      <div class="demo" id="demo-absolute">
+        <h3>3. Absolute</h3>
+        <p>La caja naranja sale del flujo normal y se coloca respecto a su
+           contenedor, a 5px de la derecha y 5px de arriba.</p>
+        <div class="container">
+          <div class="box-orange"></div>
+          <div class="box-blue"></div>
+        </div>
+      </div>
+
+      <!-- 4. FIXED -->
+      <div class="demo" id="demo-fixed">
+        <h3>4. Fixed</h3>
+        <p>La caja naranja pegada al lado derecho de la pantalla tiene
+           <code>position: fixed</code>: no se mueve al hacer scroll.</p>
+        <div class="container">
+          <div class="box-orange"></div>
+          <div class="box-blue"></div>
+        </div>
+      </div>
+
+      <!-- 5. STICKY -->
+      <div class="demo" id="demo-sticky">
+        <h3>5. Sticky</h3>
+        <p>Haz scroll dentro del cuadro gris: la caja naranja se queda pegada
+           arriba al llegar a su punto.</p>
+        <div class="scroll-area">
+          <div class="box-orange"></div>
+          <div class="relleno">
+            <p>Sigue bajando...</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <aside class="secundario">
+      <h2>Resumen</h2>
+      <ul>
+        <li><b>static:</b> flujo normal.</li>
+        <li><b>relative:</b> se mueve respecto a si mismo.</li>
+        <li><b>absolute:</b> respecto a su padre con posicion.</li>
+        <li><b>fixed:</b> respecto a la ventana.</li>
+        <li><b>sticky:</b> mezcla de relative y fixed.</li>
+      </ul>
+    </aside>
+</section>
+<footer>
+    <img src="logo_ucol.png" alt="Logo Universidad de Colima">
+    <div>
+        <p><strong>Universidad de Colima</strong></p>
+        <p>Bachillerato 8</p>
+        <p>Programacion en Internet I</p>
+    </div>
+</footer>
+</body>
+</html>
