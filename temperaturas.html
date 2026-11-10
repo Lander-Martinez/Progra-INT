@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperaturas</title>
+    <!-- Hacemos referencia a los estilos de mi pagina-->
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        
+        .conversor {
+            max-width: 425px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .conversor h1 {
+            margin: 0 0 22px;
+            font-size: 1.8rem;
+        }
+
+        .conversor label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+
+        .conversor input,
+        .conversor select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 12px;
+            margin-bottom: 18px;
+            font-size: 1rem;
+            border: 1px solid green;
+            border-radius: 8px;
+            background: #ffffff;
+        }
+
+        .conversor button {
+            padding: 12px 22px;
+            font-size: 1rem;
+            color: #ffffff;
+            background: #4caf50;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .conversor button:hover {
+            background: #43a047;
+        }
+
+        #resultado {
+            margin-top: 22px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        #resultado .final {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+ <header>
+  <video autoplay muted loop playsinline>
+    <source src="fondo.mp4" type="video/mp4">
+  </video>
+ </header>
+ <nav>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="#">Conoceme</a>
+      <ul>
+        <li><a href="informacion.html">Informacion personal</a></li>
+        <li><a href="pasatiempos.html">Pasatiempos</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Segunda Parcial</a>
+      <ul>
+        <li><a href="comunidad.html">Comunidad</a></li>
+        <li><a href="posiciones.html">Practica de posiciones</a></li>
+        <li><a href="mundodigital.html">Mi mundo digital</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Tercer Parcial</a>
+      <ul>
+        <li><a href="practicauno_tercer.html">Practica uno</a></li>
+        <li><a href="temperaturas.html">Conversor de temperaturas</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<section>
+    <aside class="principal">
+
+        <div class="conversor">
+            <h1>Conversor de temperaturas</h1>
+
+            <label for="temperatura">Temperatura:</label>
+            <input type="number" id="temperatura" placeholder="Ingresa la temperatura" step="any">
+
+            <label for="tipo">Tipo de conversión:</label>
+            <select id="tipo">
+                <option value="cf">Celsius a Fahrenheit</option>
+                <option value="fc">Fahrenheit a Celsius</option>
+            </select>
+
+            <button type="button" id="btnConvertir">Convertir</button>
+
+            <div id="resultado" aria-live="polite"></div>
+        </div>
+
+    </aside>
+</section>
+
+<script src="temperaturas.js"></script>
+</body>
+</html>
